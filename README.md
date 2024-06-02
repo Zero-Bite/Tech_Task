@@ -1,6 +1,6 @@
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+[![Badge](https://github.com/TimWHitee/techtask2/actions/workflows/javatest.yml/badge.svg)](https://github.com/Zero-Bite/Tech_Task/blob/master/.github/workflows/maven.yml)
 
-ТЗ 2
+##ТЗ 2
 
 Описание проекта
 Проект реализован в рамках ТЗ 2 по дисциплине "Технологии программирования" 1 курс НИУ ВШЭ
@@ -8,7 +8,7 @@
 Автор работы: Гончаров Григорий
 Группа: ББИ236
 
-Весь функционал реализован в ветке `master`
+##Весь функционал реализован в ветке `master`
 
 Функционал и использование
 ✅ Реализованы следующие базовые функции: чтение данных из файлов [data1, data2, data3, data4, dataMulti].txt, поиск минимума и максимума среди этих данных, нахождение суммы и произведения всех чисел

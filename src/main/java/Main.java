@@ -1,10 +1,9 @@
+
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Arrays;
-
-import java.util.function.Predicate;
 
 
 public class Main {
@@ -13,17 +12,11 @@ public class Main {
 
     public static void main(String [] args) {
 
-        double startTime = System.nanoTime();
-
-
-        // Почему то стали возникать ошибки при подлючении файлов, поэтому писал локально полный путь
-        //timeScale("_min", "C:\\Users\\realg\\Desktop\\POP\\Tech_Task\\Solution\\src\\data1.txt");
-
     }
 
     // Метод, который будет выводить время работы метода
 
-    public static void timeScale(String nameOfFunction, String pathToFile) {
+    public static long timeScale(String nameOfFunction, String pathToFile) {
 
         if (nameOfFunction == "_min") {
 
@@ -74,6 +67,7 @@ public class Main {
             System.out.println("ERROR with name of function to SCALE");
         }
 
+        return 0;
     }
 
     // Для чтения файоа из файла
@@ -156,7 +150,7 @@ public class Main {
         }
 
         return sum;
-        }
+    }
 
     public static int _mult(String pathToFile) {
 

@@ -22,6 +22,11 @@
             <artifactId>junit-platform-surefire-provider</artifactId>
             <version>1.0.0</version>
           </dependency>
+          <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.3</version>
+          </dependency>
         </dependencies>
       </plugin>
     </plugins>
@@ -39,6 +44,11 @@
       <artifactId>junit-jupiter</artifactId>
       <version>5.8.1</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>1.5.3</version>
     </dependency>
   </dependencies>
 </project>

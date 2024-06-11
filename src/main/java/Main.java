@@ -15,9 +15,9 @@ public class Main {
 
         double startTime = System.nanoTime();
 
-        int resultMin1 = _min("C:\\Users\\realg\\Desktop\\POP\\Tech_Task\\Solution\\data1.txt");
 
-        timeScale("_min", "C:\\Users\\realg\\Desktop\\POP\\Tech_Task\\Solution\\src\\data1.txt");
+        // Почему то стали возникать ошибки при подлючении файлов, поэтому писал локально полный путь
+        //timeScale("_min", "C:\\Users\\realg\\Desktop\\POP\\Tech_Task\\Solution\\src\\data1.txt");
 
     }
 

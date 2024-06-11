@@ -4,12 +4,76 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Arrays;
 
+import java.util.function.Predicate;
+
 
 public class Main {
 
+
+
     public static void main(String [] args) {
-        long multResult = _sum("data3.txt");
-        System.out.println(multResult);
+
+        double startTime = System.nanoTime();
+
+        int resultMin1 = _min("C:\\Users\\realg\\Desktop\\POP\\Tech_Task\\Solution\\data1.txt");
+
+        timeScale("_min", "C:\\Users\\realg\\Desktop\\POP\\Tech_Task\\Solution\\src\\data1.txt");
+
+    }
+
+    // Метод, который будет выводить время работы метода
+
+    public static void timeScale(String nameOfFunction, String pathToFile) {
+
+        if (nameOfFunction == "_min") {
+
+            double startTime = System.nanoTime();
+
+            int resultMin1 = _min(pathToFile);
+
+            double endTime = System.nanoTime();
+            double timeSpend = (endTime - startTime) / Math.pow(10, 6);
+
+            System.out.println("Time : " + timeSpend + " ms");
+        }
+
+        else if (nameOfFunction == "_max") {
+            double startTime = System.nanoTime();
+
+            int resultMin1 = _max(pathToFile);
+
+            double endTime = System.nanoTime();
+            double timeSpend = (endTime - startTime) / Math.pow(10, 6);
+
+            System.out.println("Time : " + timeSpend + " ms");
+        }
+
+        else if (nameOfFunction == "_mult") {
+            double startTime = System.nanoTime();
+
+            int resultMin1 = _mult(pathToFile);
+
+            double endTime = System.nanoTime();
+            double timeSpend = (endTime - startTime) / Math.pow(10, 6);
+
+            System.out.println("Time : " + timeSpend + " ms");
+        }
+
+        else if (nameOfFunction == "_sum") {
+            double startTime = System.nanoTime();
+
+            int resultSum = _sum(pathToFile);
+
+            double endTime = System.nanoTime();
+            double timeSpend = (endTime - startTime) / Math.pow(10, 6);
+
+            System.out.println("Time : " + timeSpend + " ms");
+        }
+
+        else {
+            System.out.println("ERROR with name of function to SCALE");
+        }
+
     }
 
     public static ArrayList<Integer> parser(String line) {
@@ -91,7 +155,7 @@ public class Main {
         return -1;
     }
     //
-    public static long _sum(String pathToFile) {
+    public static int _sum(String pathToFile) {
 
 
         try {
@@ -99,7 +163,7 @@ public class Main {
             String allNumbersFirst = reader.readLine();
 
             ArrayList <Integer> arrayWithNumbers = parser(allNumbersFirst);
-            long sum = 0;
+            int sum = 0;
             int sizeOfArray = arrayWithNumbers.size();
 
             for (int index = 0; index < sizeOfArray; index++) {

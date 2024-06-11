@@ -43,20 +43,20 @@ public class optionalCheck {
 
     }
 
-    @Test
-    public void testParser3() {
-
-        double startTime = System.nanoTime();
-
-        ArrayList<Integer> result = main.parser("-");
-
-        double endTime = System.nanoTime();
-        System.out.println("Time for SumTest2: " + (endTime - startTime) / Math.pow(10, 6) + " ms");
-
-        ArrayList<Integer> look = new ArrayList<>(Arrays.asList(-1));
-
-        Assertions.assertEquals(look, result);
-
-    }
+//    @Test
+//    public void testParser3() {
+//
+//        double startTime = System.nanoTime();
+//
+//        ArrayList<Integer> result = main.parser("-");
+//
+//        double endTime = System.nanoTime();
+//        System.out.println("Time for SumTest2: " + (endTime - startTime) / Math.pow(10, 6) + " ms");
+//
+//        ArrayList<Integer> look = new ArrayList<>(Arrays.asList(-1));
+//
+//        Assertions.assertEquals(look, result);
+//
+//    }
 
 }

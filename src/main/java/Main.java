@@ -76,42 +76,48 @@ public class Main {
 
     }
 
+    // Для чтения файоа из файла
+    public static ArrayList <Integer> readFile(String pathToFile) {
+
+        try(BufferedReader reader = new BufferedReader(new FileReader(pathToFile))) {
+            String allNumbersFirst = reader.readLine();
+
+            ArrayList <Integer> arrayWithNumbers = parser(allNumbersFirst);
+
+            return arrayWithNumbers;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList <Integer> torRet = new ArrayList<Integer>(Arrays.asList(-1));
+
+        return torRet;
+    }
+
+
     public static ArrayList<Integer> parser(String line) {
 
-        try {
-            ArrayList<Integer> result = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
 
-            String rep = "";
+        String rep = "";
 
-            for (int index_of_line = 0; index_of_line < line.length(); index_of_line++) {
-                if (line.charAt(index_of_line) == ' ') {
-                    result.add(Integer.valueOf(rep));
-                    rep = "";
-                } else {
-                    rep += line.charAt(index_of_line);
-                }
+        for (int index_of_line = 0; index_of_line < line.length(); index_of_line++) {
+            if (line.charAt(index_of_line) == ' ') {
+                result.add(Integer.valueOf(rep));
+                rep = "";
+            } else {
+                rep += line.charAt(index_of_line);
             }
-
-            result.add(Integer.valueOf(rep));
-
-            return result;
         }
 
-        catch (Exception e) {
-            System.out.println(e);
-        }
+        result.add(Integer.valueOf(rep));
 
-        ArrayList<Integer> result = new ArrayList<>(Arrays.asList(-1));
         return result;
     }
 
     public static int _min(String pathToFile){
-//        int minNumber = (int) Math.pow(10, 9);
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(pathToFile));
-            String allNumbersFirst = reader.readLine();
-
-            ArrayList <Integer> arrayWithNumbers = parser(allNumbersFirst);
+            ArrayList <Integer> arrayWithNumbers = readFile(pathToFile);
 
             int minNumber = 1000000000;
             int sizeOfArray = arrayWithNumbers.size();
@@ -121,84 +127,48 @@ public class Main {
             }
 
             return minNumber;
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return -1;
-
     }
+
 
     //
     public static int _max(String pathToFile) {
 
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(pathToFile));
-            String allNumbersFirst = reader.readLine();
+        ArrayList <Integer> arrayWithNumbers = readFile(pathToFile);
 
-            ArrayList <Integer> arrayWithNumbers = parser(allNumbersFirst);
+        int minNumber = -1000000000;
+        int sizeOfArray = arrayWithNumbers.size();
 
-            int minNumber = -1000000000;
-            int sizeOfArray = arrayWithNumbers.size();
-
-            for (int index = 0; index < sizeOfArray; index++) {
-                minNumber = Math.max(minNumber, arrayWithNumbers.get(index));
-            }
-
-            return minNumber;
-        }
-        catch (IOException e) {
-            e.printStackTrace();
+        for (int index = 0; index < sizeOfArray; index++) {
+            minNumber = Math.max(minNumber, arrayWithNumbers.get(index));
         }
 
-        return -1;
+        return minNumber;
     }
     //
     public static int _sum(String pathToFile) {
+        ArrayList <Integer> arrayWithNumbers = readFile(pathToFile);
 
+        int sum = 0;
+        int sizeOfArray = arrayWithNumbers.size();
 
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(pathToFile));
-            String allNumbersFirst = reader.readLine();
-
-            ArrayList <Integer> arrayWithNumbers = parser(allNumbersFirst);
-            int sum = 0;
-            int sizeOfArray = arrayWithNumbers.size();
-
-            for (int index = 0; index < sizeOfArray; index++) {
-                sum += arrayWithNumbers.get(index);
-            }
-
-            return sum;
-        }
-        catch (IOException e) {
-            e.printStackTrace();
+        for (int index = 0; index < sizeOfArray; index++) {
+            sum += arrayWithNumbers.get(index);
         }
 
-        return -1;
-    }
+        return sum;
+        }
 
     public static int _mult(String pathToFile) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(pathToFile));
-            String allNumbersFirst = reader.readLine();
 
-            ArrayList<Integer> arrayWithNumbers = parser(allNumbersFirst);
-            int sum = 1;
-            int sizeOfArray = arrayWithNumbers.size();
+        ArrayList <Integer> arrayWithNumbers = readFile(pathToFile);
+        int sum = 1;
+        int sizeOfArray = arrayWithNumbers.size();
 
-            for (int index = 0; index < sizeOfArray; index++) {
-                sum *= arrayWithNumbers.get(index);
-            }
-
-            return sum;
-        } catch (IOException e) {
-            e.printStackTrace();
+        for (int index = 0; index < sizeOfArray; index++) {
+            sum *= arrayWithNumbers.get(index);
         }
 
-        return -1;
-
+        return sum;
     }
 
 }
